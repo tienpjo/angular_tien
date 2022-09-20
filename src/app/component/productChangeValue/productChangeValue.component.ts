@@ -17,16 +17,20 @@ export class pChangeValue implements OnChanges {
   @Output() onChangeValue = new EventEmitter();
   inputNumberStock!: number | null;
   color!: string;
+
   onChangeValued() {
-    this.onChangeValue.emit({
-      productValue: this.inputNumberStock,
-      id: this.productId,
-    });
+    if (this.inputNumberStock != null) {
+      this.onChangeValue.emit({
+        productValue: this.inputNumberStock,
+        id: this.productId,
+      });
+    }
     // console.log(this.inputNumberStock);
     // console.log(this.productId);
     this.inputNumberStock = null;
   }
   ngOnChanges(changes: SimpleChanges): void {
+    // console.log(this.productId);
     if (this.stock < 10) {
       this.color = 'green';
     } else {

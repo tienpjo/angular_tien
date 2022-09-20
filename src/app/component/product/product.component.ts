@@ -7,7 +7,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class Product implements OnInit {
   products: any[] = [];
   title = 'Product';
-  @Output() productCreated = new EventEmitter();
+  //@Output() productCreated = new EventEmitter();
   productToUpdate: any = [];
   ngOnInit(): void {
     this.products = this.getProduct();
@@ -22,9 +22,10 @@ export class Product implements OnInit {
     ];
   }
   changeValued(p: any) {
-    // console.log(p);
+    console.log(p);
     this.productToUpdate = this.products.find((ID) => ID.id === p.id);
-    console.log(this.productToUpdate);
+    // console.log(this.productToUpdate);
+    //console.log(event);
     this.productToUpdate.stock = this.productToUpdate.stock + p.productValue;
   }
 
