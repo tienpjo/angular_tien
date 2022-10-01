@@ -10,14 +10,17 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { booksReducer } from './actions/book.reducer';
 import { collectionReducer } from './actions/collection.reducer';
+import { BooklistComponent } from './booklist/component/booklist.component';
+import { BookModule } from './booklist/book.module';
 @NgModule({
-  declarations: [AppComponent, SigninComponent],
+  declarations: [AppComponent, SigninComponent, BooklistComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    StoreModule.forRoot({ books: booksReducer }),
-    EffectsModule.forRoot([]),
+    StoreModule.forRoot({}),
+    EffectsModule.forRoot(),
+    BookModule,
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production,

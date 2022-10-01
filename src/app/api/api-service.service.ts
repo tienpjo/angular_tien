@@ -8,7 +8,7 @@ import { map } from 'rxjs/operators';
 })
 export class ApiService {
   constructor(private readonly http: HttpClient) {}
-  getBooks(): Observable<Array<Book>> {
+  getBooks(): Observable<Book[]> {
     return this.http
       .get<{ items: Book[] }>(
         'https://www.googleapis.com/books/v1/volumes?maxResults=5&orderBy=relevance&q=oliver%20sacks'

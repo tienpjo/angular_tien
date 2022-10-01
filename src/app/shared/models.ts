@@ -5,8 +5,3 @@ export interface Book {
     authors: Array<String>;
   };
 }
-export interface BookState {
-  books: Book[];
-  status: 'idle' | 'loading' | 'error';
-  error?: string;
-}

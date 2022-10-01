@@ -1,0 +1,6 @@
+<button type="button" class="btn btn-primary" (click)="onShow()">
+  Show Book
+</button>
+<div class="book-item" *ngFor="let book of books$ | async">
+  <p>{{ book.volumeInfo.title }} by {{ book.volumeInfo.authors }}</p>
+</div>

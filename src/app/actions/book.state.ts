@@ -1,6 +1,7 @@
 import { Book } from '../shared/models';
+import { BookState } from './book.reducer';
 
 export interface AppState {
-  books: ReadonlyArray<Book>;
-  collection: ReadonlyArray<string>;
+  books: BookState;
+  //collection: ReadonlyArray<string>;
 }
